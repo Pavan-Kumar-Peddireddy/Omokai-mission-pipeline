@@ -1,3 +1,5 @@
+
+
 # Omokai Take-Home — Natural Language Mission Pipeline
 
 A ground robot that takes a plain-English instruction, turns it into a
@@ -22,9 +24,24 @@ same input. This separation is the core design constraint of the whole
 system, and it's enforced structurally, not just by convention — see
 "Architecture" below for exactly how.
 
+🗺️ Navigation Map
+
+The robot utilizes a segmented floor plan to understand spatial boundaries and specific target zones, allowing it to translate natural language entities (like "kitchen" or "snug") to physical (x, y) coordinates.
+
+    Source File: <img width="1536" height="1536" alt="house_floor_plan_segmented" src="https://github.com/user-attachments/assets/a0da3467-f44f-41b7-bd48-91878d854697" />
+
+    Technical Context: The segments map directly to the zone configuration in the mission_llm node, ensuring the robot knows exactly where each room begins and ends.
 
 
 
+
+🎥 Mission Demonstration
+
+See the pipeline in action as the robot receives instructions, validates them against the map, and executes the trajectory to the target zone.
+
+    Watch the demo: [demo.webm](https://github.com/user-attachments/assets/43f21518-0658-4efc-827f-732b2dd03fb0)
+
+    Mission Status: You can track the real-time execution states (ACCEPTED → EXECUTING → COMPLETED) via the /mission/status topic.
 
 ## System requirements
 
