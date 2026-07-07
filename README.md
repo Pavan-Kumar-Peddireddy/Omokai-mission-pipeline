@@ -4,6 +4,7 @@ A ground robot that takes a plain-English instruction, turns it into a
 validated mission plan, and executes it deterministically in simulation —
 built around a custom differential-drive robot, Nav2, and Gazebo Harmonic.
 
+
 ## What this demonstrates
 
 ```
@@ -20,6 +21,10 @@ re-validates independently and drives Nav2 the same way every time for the
 same input. This separation is the core design constraint of the whole
 system, and it's enforced structurally, not just by convention — see
 "Architecture" below for exactly how.
+
+
+
+
 
 ## System requirements
 
