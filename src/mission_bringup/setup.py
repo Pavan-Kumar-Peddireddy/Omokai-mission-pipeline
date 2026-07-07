@@ -35,8 +35,12 @@ setup(
         # Launch files - Explicitly structured path join for glob compliance
         (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*.launch.py'))),
 
-        # Config files (YAMLs)
-        (os.path.join('share', package_name, 'config'), glob(os.path.join('config', '*.yaml'))),
+        # Config files (YAMLs + RViz configs -- *.rviz was previously
+        # missing from this glob, so nav2_default_view.rviz was NEVER
+        # actually installed/copied by colcon on any prior build, no
+        # matter what its source content was.)
+        (os.path.join('share', package_name, 'config'),
+            glob(os.path.join('config', '*.yaml')) + glob(os.path.join('config', '*.rviz'))),
 
         # URDF models (SDF, URDF, etc.)
         (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*'))),
@@ -50,7 +54,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='pavan',
-    maintainer_address='todo@todo.com',
+    maintainer_email='todo@todo.com',
     description='Bringup package for LLM and Executor pipelines',
     license='Apache-2.0',
     tests_require=['pytest'],

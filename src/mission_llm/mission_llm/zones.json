@@ -1,24 +1,251 @@
 {
-  "_comment": "Named zones in the turtlebot3_house map, captured via RViz 'Publish Point' in the map frame. yaw defaults to 0.0 since Publish Point does not capture orientation -- update manually via '2D Pose Estimate' if specific facing directions matter for the demo.",
-  "zones": {
-    "spawn_corner":        {"x": 0.556,  "y": -2.184, "yaw": 0.0, "description": "room corner where the robot spawns"},
-    "small_room_junction": {"x": 1.076,  "y": 4.233,  "yaw": 0.0, "description": "small room at the L intersection just past the spawn room"},
-    "main_hall":           {"x": 5.523,  "y": 1.975,  "yaw": 0.0, "description": "main hall with the entrance corridor"},
-    "entrance":            {"x": 7.931,  "y": 0.948,  "yaw": 0.0, "description": "the entrance / entrance door"},
-    "big_room_east":       {"x": 10.241, "y": 1.861,  "yaw": 0.0, "description": "bigger room at the other L intersection"},
-    "nested_room":         {"x": 7.868,  "y": 3.411,  "yaw": 0.0, "description": "nested room before the bigger hall"},
-    "far_hall":            {"x": 12.996, "y": 1.945,  "yaw": 0.0, "description": "bigger hall at the far L, before the opposite corner room"},
-    "corner_room":         {"x": 13.043, "y": -3.270, "yaw": 0.0, "description": "the far corner room"}
+  "_comment": "Named real-estate-style areas in the turtlebot3_house map, captured via RViz 'Publish Point' in the map frame. Room perimeters trace the boundary walls (for a full room patrol); 'center' and 'doorway' give single-point references for quick goto commands. yaw on perimeter points is auto-computed as heading toward the next point in the walk, so the robot turns naturally as it patrols each room's boundary.",
+  "areas": {
+    "the_study": {
+      "aka": "Room 1 - Robot Spawn Room",
+      "description": "Corner room where the robot starts; empty except a cupboard.",
+      "center": {
+        "x": 0.624,
+        "y": -0.585,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 0.682,
+        "y": 2.017,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 0.061,
+          "y": -2.417,
+          "yaw": 0.061
+        },
+        {
+          "x": 1.179,
+          "y": -2.349,
+          "yaw": 1.526
+        },
+        {
+          "x": 1.342,
+          "y": 1.324,
+          "yaw": -3.078
+        },
+        {
+          "x": 0.036,
+          "y": 1.241,
+          "yaw": -1.564
+        }
+      ],
+      "room_number": 1
+    },
+    "the_pantry": {
+      "aka": "Room 2 - L-Intersection Storage Room",
+      "description": "Small room at the L-intersection near the spawn room; two cupboards, no tables.",
+      "center": {
+        "x": 0.81,
+        "y": 4.043,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 1.901,
+        "y": 4.447,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 0.055,
+          "y": 2.953,
+          "yaw": -0.172
+        },
+        {
+          "x": 1.284,
+          "y": 2.74,
+          "yaw": 1.575
+        },
+        {
+          "x": 1.273,
+          "y": 5.16,
+          "yaw": 3.096
+        },
+        {
+          "x": 0.088,
+          "y": 5.214,
+          "yaw": -1.585
+        }
+      ],
+      "room_number": 2
+    },
+    "the_grand_foyer": {
+      "aka": "Room 3 - Entrance Hall",
+      "description": "The hall you enter the house into; has a dustbin in one corner and a table at the center.",
+      "center": {
+        "x": 4.404,
+        "y": 3.531,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 6.625,
+        "y": 1.456,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 2.713,
+          "y": 5.447,
+          "yaw": -1.617
+        },
+        {
+          "x": 2.539,
+          "y": 1.704,
+          "yaw": 0.021
+        },
+        {
+          "x": 6.195,
+          "y": 1.782,
+          "yaw": 1.556
+        },
+        {
+          "x": 6.252,
+          "y": 5.594,
+          "yaw": -3.1
+        }
+      ],
+      "room_number": 3
+    },
+    "the_breezeway": {
+      "aka": "Room 4 - Main Entrance Corridor",
+      "description": "Small connecting corridor with the main entrance; links the Grand Foyer and the Master Suite. Not an enclosed room -- single waypoint only.",
+      "center": {
+        "x": 8.042,
+        "y": 1.299,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 8.009,
+        "y": 0.783,
+        "yaw": 0.0
+      },
+      "room_number": 4
+    },
+    "the_master_suite": {
+      "aka": "Room 5 - Big Room East",
+      "description": "The largest room in the house; has a cupboard and a table.",
+      "center": {
+        "x": 11.815,
+        "y": 3.639,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 9.317,
+        "y": 1.304,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 9.933,
+          "y": 1.404,
+          "yaw": 0.021
+        },
+        {
+          "x": 13.651,
+          "y": 1.483,
+          "yaw": 1.542
+        },
+        {
+          "x": 13.753,
+          "y": 4.995,
+          "yaw": -3.071
+        },
+        {
+          "x": 12.045,
+          "y": 4.875,
+          "yaw": 2.952
+        },
+        {
+          "x": 9.79,
+          "y": 5.308,
+          "yaw": -1.534
+        }
+      ],
+      "room_number": 5
+    },
+    "the_powder_room": {
+      "aka": "Room 6 - Nested Room (inside Master Suite)",
+      "description": "Small nested room tucked inside the Master Suite; has a dustbin.",
+      "center": {
+        "x": 8.046,
+        "y": 3.824,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 9.323,
+        "y": 5.521,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 7.457,
+          "y": 2.478,
+          "yaw": 1.509
+        },
+        {
+          "x": 7.645,
+          "y": 5.535,
+          "yaw": -0.345
+        },
+        {
+          "x": 8.69,
+          "y": 5.16,
+          "yaw": -2.002
+        }
+      ],
+      "room_number": 6
+    },
+    "the_snug": {
+      "aka": "Room 7 - Far Corner Room",
+      "description": "The last corner room after the Master Suite; small table, tight open space.",
+      "center": {
+        "x": 13.072,
+        "y": -1.708,
+        "yaw": 0.0
+      },
+      "doorway": {
+        "x": 13.093,
+        "y": 0.785,
+        "yaw": 0.0
+      },
+      "perimeter": [
+        {
+          "x": 13.848,
+          "y": 0.362,
+          "yaw": -2.986
+        },
+        {
+          "x": 12.339,
+          "y": 0.126,
+          "yaw": -1.567
+        },
+        {
+          "x": 12.353,
+          "y": -3.434,
+          "yaw": 0.038
+        },
+        {
+          "x": 13.811,
+          "y": -3.379,
+          "yaw": 1.561
+        }
+      ],
+      "room_number": 7
+    }
   },
-  "perimeter_loop": [
-    "spawn_corner",
-    "small_room_junction",
-    "main_hall",
-    "entrance",
-    "big_room_east",
-    "nested_room",
-    "far_hall",
-    "corner_room",
-    "spawn_corner"
+  "full_house_patrol_order": [
+    "the_study",
+    "the_pantry",
+    "the_grand_foyer",
+    "the_breezeway",
+    "the_master_suite",
+    "the_powder_room",
+    "the_snug"
   ]
 }
