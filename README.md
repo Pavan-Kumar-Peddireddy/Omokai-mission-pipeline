@@ -1,5 +1,5 @@
 
-<img width="1536" height="1536" alt="house_floor_plan_segmented" src="https://github.com/user-attachments/assets/e7f4cdb3-bf30-4e84-aa74-d6068fa864ff" />
+
 
 
 # Omokai Take-Home — Natural Language Mission Pipeline
