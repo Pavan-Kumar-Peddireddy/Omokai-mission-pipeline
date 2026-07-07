@@ -29,6 +29,7 @@ system, and it's enforced structurally, not just by convention — see
 The robot utilizes a segmented floor plan to understand spatial boundaries and specific target zones, allowing it to translate natural language entities (like "kitchen" or "snug") to physical (x, y) coordinates.
 
     Source File:
+
 https://github.com/user-attachments/assets/a0da3467-f44f-41b7-bd48-91878d854697
 
     Technical Context: The segments map directly to the zone configuration in the mission_llm node, ensuring the robot knows exactly where each room begins and ends.
