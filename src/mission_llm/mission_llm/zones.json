@@ -1,0 +1,24 @@
+{
+  "_comment": "Named zones in the turtlebot3_house map, captured via RViz 'Publish Point' in the map frame. yaw defaults to 0.0 since Publish Point does not capture orientation -- update manually via '2D Pose Estimate' if specific facing directions matter for the demo.",
+  "zones": {
+    "spawn_corner":        {"x": 0.556,  "y": -2.184, "yaw": 0.0, "description": "room corner where the robot spawns"},
+    "small_room_junction": {"x": 1.076,  "y": 4.233,  "yaw": 0.0, "description": "small room at the L intersection just past the spawn room"},
+    "main_hall":           {"x": 5.523,  "y": 1.975,  "yaw": 0.0, "description": "main hall with the entrance corridor"},
+    "entrance":            {"x": 7.931,  "y": 0.948,  "yaw": 0.0, "description": "the entrance / entrance door"},
+    "big_room_east":       {"x": 10.241, "y": 1.861,  "yaw": 0.0, "description": "bigger room at the other L intersection"},
+    "nested_room":         {"x": 7.868,  "y": 3.411,  "yaw": 0.0, "description": "nested room before the bigger hall"},
+    "far_hall":            {"x": 12.996, "y": 1.945,  "yaw": 0.0, "description": "bigger hall at the far L, before the opposite corner room"},
+    "corner_room":         {"x": 13.043, "y": -3.270, "yaw": 0.0, "description": "the far corner room"}
+  },
+  "perimeter_loop": [
+    "spawn_corner",
+    "small_room_junction",
+    "main_hall",
+    "entrance",
+    "big_room_east",
+    "nested_room",
+    "far_hall",
+    "corner_room",
+    "spawn_corner"
+  ]
+}
