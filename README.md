@@ -1,4 +1,6 @@
 
+<img width="1536" height="1536" alt="house_floor_plan_segmented" src="https://github.com/user-attachments/assets/e7f4cdb3-bf30-4e84-aa74-d6068fa864ff" />
+
 
 # Omokai Take-Home — Natural Language Mission Pipeline
 
@@ -30,7 +32,8 @@ The robot utilizes a segmented floor plan to understand spatial boundaries and s
 
     Source File:
 
-https://github.com/user-attachments/assets/a0da3467-f44f-41b7-bd48-91878d854697
+<img width="1536" height="1536" alt="house_floor_plan_segmented" src="https://github.com/user-attachments/assets/e7f4cdb3-bf30-4e84-aa74-d6068fa864ff" />
+
 
     Technical Context: The segments map directly to the zone configuration in the mission_llm node, ensuring the robot knows exactly where each room begins and ends.
 
