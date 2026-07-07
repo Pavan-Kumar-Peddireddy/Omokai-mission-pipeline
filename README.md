@@ -287,7 +287,7 @@ original work written for this task.
 
 ## AI assistance disclosure
 
-AI assistance (Claude) was used throughout for debugging support,
+AI assistance was used throughout for debugging support,
 boilerplate scaffolding, and iterating on configuration. All architecture
 decisions, root-cause diagnosis (the GPU/EGL rendering issue, an SDF
 duplicate-entity bug, TF/topic mismatches, and a packaging bug where an
